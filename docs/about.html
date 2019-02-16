@@ -190,7 +190,13 @@ $(document).ready(function () {
   <a href="about.html">About</a>
 </li>
 <li>
-  <a href="license.html">License</a>
+  <a href="DataIntegration.html">DataIntegration</a>
+</li>
+<li>
+  <a href="DimensionReduction_Clustering.html">Clustering</a>
+</li>
+<li>
+  <a href="Contrasts.html">Contrasts</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -221,7 +227,7 @@ div.section {
 </div>
 
 
-<p><strong>Last updated:</strong> 2019-02-14</p>
+<p><strong>Last updated:</strong> 2019-02-16</p>
 <strong>workflowr checks:</strong> <small>(Click a bullet for more information)</small>
 <ul>
 <li>
@@ -230,10 +236,20 @@ div.section {
 </details>
 </li>
 <li>
-<p><details> <summary> <strong style="color:blue;">✔</strong> <strong>Repository version:</strong> 56e6c93 </summary></p>
+<p><details> <summary> <strong style="color:blue;">✔</strong> <strong>Repository version:</strong> <a href="https://github.com/yasinkaymaz/Harvard-GillardonLab/tree/0f4a96c3f2be1efd2885aafc36c57e58f47014ab" target="_blank">0f4a96c</a> </summary></p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility. The version displayed above was the version of the Git repository at the time these results were generated. <br><br> Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
 <pre><code>
-working directory clean
+Untracked files:
+    Untracked:  code/Contrasts_rc.R
+    Untracked:  code/WP_codes.R
+    Untracked:  code/functions.R
+    Untracked:  docs/figure/
+
+Unstaged changes:
+    Modified:   README.md
+    Modified:   analysis/DE_L5_IT-PT.Rmd
+    Modified:   analysis/_site.yml
+
 </code></pre>
 Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes. </details>
 </li>
@@ -266,7 +282,41 @@ Message
 Rmd
 </td>
 <td style="text-align:left;">
-56e6c93
+<a href="https://github.com/yasinkaymaz/Harvard-GillardonLab/blob/0f4a96c3f2be1efd2885aafc36c57e58f47014ab/analysis/about.Rmd" target="_blank">0f4a96c</a>
+</td>
+<td style="text-align:left;">
+Yasin Kaymaz
+</td>
+<td style="text-align:left;">
+2019-02-16
+</td>
+<td style="text-align:left;">
+second Commit to repo
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+html
+</td>
+<td style="text-align:left;">
+<a href="https://cdn.rawgit.com/yasinkaymaz/Harvard-GillardonLab/2c6eb393b43d28266eea8ddf68f99239348b667e/docs/about.html" target="_blank">2c6eb39</a>
+</td>
+<td style="text-align:left;">
+Yasin Kaymaz
+</td>
+<td style="text-align:left;">
+2019-02-14
+</td>
+<td style="text-align:left;">
+Build site.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Rmd
+</td>
+<td style="text-align:left;">
+<a href="https://github.com/yasinkaymaz/Harvard-GillardonLab/blob/56e6c939a1676bf5ea25a619ed1779e614dde281/analysis/about.Rmd" target="_blank">56e6c93</a>
 </td>
 <td style="text-align:left;">
 Yasin Kaymaz
@@ -283,7 +333,30 @@ Start workflowr project.
 </ul>
 <p></details></p>
 <hr />
-<p>Describe your project.</p>
+<div id="work-packages-wp" class="section level1">
+<h1>Work packages (WP):</h1>
+<div id="wp-1" class="section level2">
+<h2>WP 1:</h2>
+<p>Subset Pvalb+ count matrices for each of the brain regions described in Table 1.</p>
+</div>
+<div id="wp-2" class="section level2">
+<h2>WP 2:</h2>
+<p>Generate a Pvalb+ specific expression profile based on gene signatures for each of the sub-clusters defined in Table 1. Compare profile across each dataset and determine a robust gene expression signature for Pvalb+ cells that can be utilised for later work packages.</p>
+</div>
+<div id="wp-3" class="section level2">
+<h2>WP 3:</h2>
+<p>In each study contrast the gene expression profile of Pvalb+ cells against the remaining GABAergic cell types. Provide a ranked list based on uniqueness OR prioritised gene expression in Pvalb+ cells. NOTE: presently several methods exist to define genes expressed in one cell class over another – this can be discussed further.</p>
+<ol style="list-style-type: decimal">
+<li>Habib: Pvalb-Tac1 versus GABA clusters in PFC only.</li>
+<li>Lake 2016: In6 versus all remaining In groups in BA10 only.</li>
+<li>Lake 2016: In6a/b versus all remaining In groups in BA10 only.</li>
+</ol>
+</div>
+<div id="wp-4" class="section level2">
+<h2>WP 4:</h2>
+<p>Repeat above in all neuronal cell classes and then all cells in dataset.</p>
+</div>
+</div>
 
 <!-- Adjust MathJax settings so that all math formulae are shown using
 TeX fonts only; see
