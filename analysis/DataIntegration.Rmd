@@ -74,7 +74,7 @@ After downloading the data, unzip the file of **count** matrix for further analy
 <!-- ``` -->
 
 
-For the processing details, please follow [Code](https://github.com/yasinkaymaz/Harvard-NissenLab/tree/master/code/WP_codes.R)
+For the processing details, please follow [Code](https://github.com/yasinkaymaz/Harvard-GillardonLab/tree/master/code/WP_codes.R)
 
 
 .
