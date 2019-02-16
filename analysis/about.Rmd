@@ -5,4 +5,27 @@ output:
     toc: false
 ---
 
-Describe your project.
+# Work packages (WP):
+
+## WP 1: 
+
+Subset Pvalb+ count matrices for each of the brain regions described in Table 1.  
+
+## WP 2: 
+
+Generate a Pvalb+ specific expression profile based on gene signatures for each of the sub-clusters defined in Table 1. Compare profile across each dataset and determine a robust gene expression signature for Pvalb+ cells that can be utilised for later work packages.        	
+
+## WP 3: 
+
+In each study contrast the gene expression profile of Pvalb+ cells against the remaining GABAergic cell types. Provide a ranked list based on uniqueness OR prioritised gene expression in Pvalb+ cells. NOTE: presently several methods exist to define genes expressed in one cell class over another – this can be discussed further.   
+
+1.	Habib: Pvalb-Tac1 versus GABA clusters in PFC only.
+2.	Lake 2016: In6 versus all remaining In groups in BA10 only.
+3.	Lake 2016: In6a/b versus all remaining In groups in BA10 only.
+  
+## WP 4:
+
+Repeat above in all neuronal cell classes and then all cells in dataset.
+   	
+
+

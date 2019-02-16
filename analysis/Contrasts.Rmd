@@ -1,0 +1,44 @@
+---
+title: "Contrasts"
+author: "Yasin Kaymaz"
+date: "1/31/2019"
+output:
+  html_document:
+    css: style.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(plotly)
+library(DT)
+library(tidyverse)
+source("https://raw.githubusercontent.com/yasinkaymaz/cellRtools/master/main/functions.R")
+source("code/functions.R")
+
+load("~/data/all.markers.Lake2018.FC.Rdata")
+
+```
+
+Here, the purpose is to identify genes that are exclusively expressed in In6a an In6b cell population in contrast against the background cells. I considered three group of cells as background;
+
+## Marker genes in each of these subsets:
+
+```{r echo=FALSE}
+#InteractiveTable(FilterTable(annotateGenes(markers.L5IT.vs.Glu)))
+InteractiveTable(FilterTable(allmarkers.subclass,allmarkers=T))
+```
+
+
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+

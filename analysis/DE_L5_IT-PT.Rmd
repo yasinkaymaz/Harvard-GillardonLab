@@ -1,0 +1,99 @@
+---
+title: "DE_L5_IT-PT"
+author: "Yasin Kaymaz"
+date: "1/30/2019"
+output:
+  html_document:
+    css: style.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(plotly)
+library(DT)
+library(tidyverse)
+options(width = 80)
+source("https://raw.githubusercontent.com/yasinkaymaz/cellRtools/master/main/functions.R")
+source("code/functions.R")
+
+```
+
+# Differentially expressed genes between PT and IT
+
+```{r echo=FALSE}
+load("~/data/Tasic2018-reAnalysis_L5ITPT.RData")
+```
+
+Comparing all IT cells to PT cells within the L5 layer using MAST test.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+volcanoPlotly(allmarkers.subclass)
+```
+
+### Table for genes with significantly higher expression in **IT**:
+
+(padj < 0.01, avglogFC > 0.2, pct.1 > 0.5, pct.1-pct.2 > 0.25)
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+allmarkers.subclass  %>%
+  select(-p_val)%>%
+  filter(cluster == "L5 IT") %>%
+  filter(p_val_adj < 0.01) %>%
+  filter(avg_logFC > 0.2) %>%
+  filter(pct.1 > 0.5) %>% filter( ((pct.1 - pct.2) > 0.25)) %>%
+  datatable( extensions = 'Scroller', options = list(
+    deferRender = TRUE,
+    scrollY = 200,
+    scroller = TRUE
+  ))
+```
+
+
+### Table for genes with significantly higher expression in **PT**:
+
+(padj < 0.01, avglogFC > 0.2, pct.1 > 0.5, pct.1-pct.2 > 0.25)
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+allmarkers.subclass  %>%
+  select(-p_val) %>%
+  filter(cluster == "L5 PT") %>%
+  filter(p_val_adj < 0.01) %>%
+  filter(avg_logFC > 0.2) %>%
+  filter(pct.1 > 0.5) %>% filter( ((pct.1 - pct.2) > 0.25)) %>%
+  datatable( extensions = 'Scroller', options = list(
+    deferRender = TRUE,
+    scrollY = 200,
+    scroller = TRUE
+  ))
+```
+
+## Expression heatmap of top 200 differentially expressed genes between **IT and PT**
+
+```{r echo=FALSE, message=F, warning=F, fig.height=20, fig.width=20}
+top100 <- allmarkers.subclass %>% filter(p_val_adj < 0.01) %>% filter(pct.1 > 0.5) %>% filter( ((pct.1 - pct.2)/max(pct.1,pct.2) > 0.7)) %>% group_by(cluster) %>% top_n(100, avg_logFC)
+L5ALM.ITPT = SetAllIdent(L5ALM.ITPT, id = 'subclass')
+DoHeatmap(object = L5ALM.ITPT, genes.use = top100$gene, slim.col.label = TRUE, remove.key = TRUE,group.label.loc="top",group.label.rot=T)
+```
+
+## Same heatmap as above except cells are grouped into subcategories
+
+```{r echo=FALSE, message=F, warning=F, fig.height=20, fig.width=20}
+top20 <- allmarkers.cluster %>% filter(p_val_adj < 0.01) %>% group_by(cluster) %>% top_n(20, avg_logFC)
+L5ALM.ITPT = SetAllIdent(L5ALM.ITPT, id = 'cluster')
+DoHeatmap(object = L5ALM.ITPT, genes.use = top20$gene, slim.col.label = TRUE, remove.key = TRUE,group.label.loc="top",group.label.rot=T)
+```
+
+
+
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
