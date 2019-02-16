@@ -1,5 +1,3 @@
 # Harvard-GillardonLab
 
-A [workflowr][] project.
-
-[workflowr]: https://github.com/jdblischak/workflowr
+The site for results: https://yasinkaymaz.github.io/Harvard-GillardonLab/index.html
